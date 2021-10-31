@@ -1,0 +1,14 @@
+{% extends "AppWeb/layout/basic.html" %}
+
+{% block content %}
+{% for cl in cls %}
+<div class="client">
+    <h2>{{cl.Name}}</h2>
+    <p>{{cl.Second_Name}}</p>
+    <p>{{cl.Work_field}}</p>
+    <p>{{cl.content}}</p>
+    <p>{{cl.Add_Time|date:"d.m.Y H:i:s"}}</p>
+</div>
+{% endfor %}
+{% endblock %}
+

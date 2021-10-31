@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type"
+              content = "text/html; charset=utf-8">
+        <link rel="stylesheet" type="text/css" href ="{% static 'AppWeb/style.css' %}">
+        <title>{% block title %} Главная {% endblock %} - Список клиентов </title>
+    </head>
+    <body>
+        <header>
+            <h1>Список клиентов</h1>
+        </header>
+        <nav>
+            <a href ="{% url 'index' %}">Главная</a>
+            <a href ="{% url 'add' %}">Добавить клиента</a>
+            {% for vector in vectors_work %}
+            <a href="{% url 'by_VectorWork' vector.pk %}">{{ vector.name }}</a>
+            {% endfor %}
+        </nav>
+        <section>
+            {% block content %}
+            {% endblock %}
+        </section>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends "AppWeb/layout/basic.html" %}
+
+{% block title %} {{ current_vector.name }} {% endblock %}
+
+{% block content %}
+<h2>Направление бизнеса: {{ current_vector.name }}</h2>
+{% for cl in cls %}
+<div>
+    <h2>{{cl.Name}}</h2>
+    <p>{{cl.Second_Name}}</p>
+    <p>{{cl.Work_field}}</p>
+    <p>{{cl.content}}</p>
+    <p>{{cl.Add_Time|date:"d.m.Y H:i:s"}}</p>
+    </div>
+{% endfor %}
+{% endblock %}
+
+
+
